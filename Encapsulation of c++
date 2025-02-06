@@ -1,0 +1,150 @@
+** The wrapping up or bundling of data (attribites) and methods (Function) into a single unit is known as Encapsulation!
+** It is also known as information hiding concept
+** The data is not accessible from outside the world and only those functions can access which are wrapped class or in the same class!
+
+
+ **In C++, encapsulation can be implemented using classes and access modifiers.
+
+Example: 1
+.....................................................................................
+#include <iostream>
+using namespace std;
+
+class Encapsulation{
+    private:
+      //data hidden from outside the world
+      int x;
+      
+     public:
+       //functon to set value of variable x
+       void set(int a)
+       {
+           x = a;
+       }
+       
+       //function to return value of variable x
+       int get()
+       {
+           return x;
+       }
+};
+
+
+int main() {
+  Encapsulation obj;
+  obj.set(5);
+  cout<<obj.get();
+
+    return 0;
+}
+
+Explanation: In the above program, the variable x is made private. This variable can be accessed and manipulated only using the functions get() and set() which are present inside the class. Thus we can say that here, the variable x and the functions get() and set() are bound together which is nothing but encapsulation.
+
+
+
+**Example: 2
+...........................................................................
+#include <iostream>
+using namespace std;
+
+//declaring class
+class circle{
+    //access modifier
+    
+    private:
+       //Data member
+       float area;
+       float radius;
+       
+    public:
+    void getRadius()
+    {
+        cout<<"Enter radious\n";
+        cin>>radius;
+    }
+    
+    void findArea()
+    {
+        area = 3.1416 * radius * radius;
+        cout<<"Area of circle = "<<area;
+    }
+};
+
+
+
+int main() {
+    //creating instance(obj) of class
+    circle cir;
+    cir.getRadius(); //calling function
+    cir.findArea(); //calling function
+    
+    return 0;
+}
+Role of Access Specifiers in Encapsulation
+Access specifiers facilitate Data Hiding in C++ programs by restricting access to the class member functions and data members. There are three types of access specifiers in C++:
+
+Private: Private access specifier means that the member function or data member can only be accessed by other member functions of the same class.
+Protected: A protected access specifier means that the member function or data member can be accessed by other member functions of the same class or by derived classes.
+Public: Public access specifier means that the member function or data member can be accessed by any code. 
+By default, all data members and member functions of a class are made private by the compiler.
+
+
+
+** Example : 3
+This is real life example
+.................................................
+
+class Employee
+{
+ private:
+        int ID;
+        string employeeName;
+        int joinYear;
+
+public:
+
+     Employee(int id, string name, int year)
+    {
+     ID = id;
+     employeeName = name;
+     joinYear = year;
+    }
+
+ //Set (Mutator/Setter) – Assigns a value to a private variable
+ void setId(int new ID)
+{
+  ID = newID
+}
+
+void setName(string newName)
+{
+  employeeName = newName
+}
+
+void setYear( int newYear)
+{
+   joinYear = newYear
+}
+
+int getId()
+{
+  return ID;
+}
+
+string getName()
+{
+  return employeeName;
+}
+int getYear()
+{
+  return joinYear;
+}
+};
+
+=> in this example, "Employee" class ha been define with three data members(ID,Name,JoinYear) and six methods(setId(), setName(), setYear(), getId(),getName(),getYear());
+
+** Data bundling : All details related to an employee are bundling together within the employee class;
+** Data hiding : Data members are marked as private; which means they can only be accessed directly within the class. this help us to protect the data from outside the interference!
+
+
+
