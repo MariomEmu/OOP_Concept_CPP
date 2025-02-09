@@ -42,6 +42,11 @@ int main()
 2. Pure Virtual Function
 .................................
 
+Pure virtual functions are used
+
+1. if a function doesn't have any use in the base class
+2. but the function must be implemented by all its derived classes
+
 
 ///Pure Virtual Function
  class Instrument{ ///it abstract class cz it has it least one pure virtual function
@@ -84,7 +89,11 @@ int main()
 
 3. Abstract Class
 ......................
-Abstract cls is a class that has at least one pure virtual function
+A class that contains a pure virtual function is known as an abstract class.
+1. Abstract cls is a class that has at least one pure virtual function
+2. An abstract class can have constructors. 
+3. We can have pointers and references of abstract class type.
+4. An abstract class in C++ can also be defined using struct keyword.
 
 
 
