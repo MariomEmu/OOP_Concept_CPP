@@ -14,3 +14,48 @@ C++ supports five types of inheritance:
 4. Multilevel inheritance
 5. Hybrid inheritance
 
+
+simple example:
+
+#include<iostream>
+using namespace std;
+
+
+class Student{
+  public:
+      string Name;
+      int Age;
+      char Gender;
+
+      virtual void Study() = 0; ///pure virtual method
+
+
+
+};
+
+class programmingStudent: public Student{
+  public:
+      void Study(){
+
+      cout<<"Learning Programming"<<endl;
+      }
+};
+
+class ArtStudent: public Student{
+
+  public:
+      void Study(){
+        cout<<"Learning to paint"<<endl;
+      }
+};
+
+class MusicStudent: public Student{
+
+  public:
+      void Study(){
+      cout<<"Learning to songs"<<endl;
+
+      }
+};
+
+
