@@ -1,0 +1,86 @@
+** The logic that works for base class should also work for all of the  derived classes.
+
+The word “polymorphism” means having many forms. In simple words, we can define polymorphism as the ability of a message to be displayed in more than one form.
+A real-life example of polymorphism is a person who at the same time can have different characteristics.
+
+** Types of Polymorphism
+1. Compile-time Polymorphism
+  ** Method/Function Overloading
+    [When there are multiple functions with the same name but different parameters, then the functions are said to be overloaded, hence this is known as Function Overloading.]
+  ** Operator Overloading
+    [C++ has the ability to provide the operators with a special meaning for a data type, this ability is known as operator overloading]
+
+2. Runtime Polymorphism
+  Function Overriding achieves this type of polymorphism. Late binding and dynamic polymorphism are other names for runtime polymorphism.
+  The function call is resolved at runtime in runtime polymorphism
+ ** Method/function Overriding
+
+example:
+
+#include<iostream>
+using namespace std;
+
+
+class Student{
+  public:
+      string Name;
+      int Age;
+      char Gender;
+
+      virtual void Study() = 0; ///pure virtual method
+
+
+
+};
+
+class programmingStudent: public Student{
+  public:
+      void Study(){
+
+      cout<<"Learning Programming"<<endl;
+      }
+};
+
+class ArtStudent: public Student{
+
+  public:
+      void Study(){
+        cout<<"Learning to paint"<<endl;
+      }
+};
+
+class MusicStudent: public Student{
+
+  public:
+      void Study(){
+      cout<<"Learning to songs"<<endl;
+
+      }
+};
+
+int main()
+{
+    Student* students[3];
+    students[0] = new programmingStudent();
+    students[1] = new ArtStudent();
+    students[2] = new MusicStudent();
+
+    for( int i = 0; i <= 2; i++)
+    {
+
+        students[i] -> Study();
+    }
+
+    ///Dealocate memory
+
+    for( int i = 0; i <= 2; i++)
+    {
+
+        delete students[i];
+    }
+
+    return 0;
+}
+
+
+
